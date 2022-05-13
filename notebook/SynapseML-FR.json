@@ -1,0 +1,204 @@
+{
+	"name": "SynapseML-FR",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "vksparkpool",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "389d84e0-d2e1-4709-90c3-6d88c2a857b2"
+			}
+		},
+		"metadata": {
+			"saveOutput": false,
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/7498e10a-1544-41e2-a9d0-35fd5695f525/resourceGroups/vksynapaerg/providers/Microsoft.Synapse/workspaces/vksynapse/bigDataPools/vksparkpool",
+				"name": "vksparkpool",
+				"type": "Spark",
+				"endpoint": "https://vksynapse.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/vksparkpool",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.1",
+				"nodeCount": 10,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"%%configure -f\r\n",
+					"{\r\n",
+					"  \"name\": \"synapseml\",\r\n",
+					"  \"conf\": {\r\n",
+					"      \"spark.jars.packages\": \"com.microsoft.azure:synapseml_2.12:0.9.5-13-d1b51517-SNAPSHOT\",\r\n",
+					"      \"spark.jars.repositories\": \"https://mmlspark.azureedge.net/maven\",\r\n",
+					"      \"spark.jars.excludes\": \"org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.12,org.scalactic:scalactic_2.12,org.scalatest:scalatest_2.12\",\r\n",
+					"      \"spark.yarn.user.classpath.first\": \"true\"\r\n",
+					"  }\r\n",
+					"}"
+				],
+				"attachments": null,
+				"execution_count": 4
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"# example: input as images\r\n",
+					"# TODO: code to list all items in DL folder\r\n",
+					"data = [\r\n",
+					"    [\"https://aldelarsynapsedl.blob.core.windows.net/datasets/forms-images/layout.jpg?sv=2020-02-10&st=2022-03-07T23%3A44%3A42Z&se=2023-03-08T23%3A44%3A00Z&sr=d&sp=rl&sig=1Gb%2FhGta50qPdNi0X1ETsDWBSQ9EAt%2BwDyOt5x9toZY%3D&sdd=1\"],\r\n",
+					"    [\"https://aldelarsynapsedl.blob.core.windows.net/datasets/forms-images/invoice_xin_cube.jpg?sv=2020-02-10&st=2022-03-07T23%3A44%3A42Z&se=2023-03-08T23%3A44%3A00Z&sr=d&sp=rl&sig=1Gb%2FhGta50qPdNi0X1ETsDWBSQ9EAt%2BwDyOt5x9toZY%3D&sdd=1\"],\r\n",
+					"    [\"https://aldelarsynapsedl.blob.core.windows.net/datasets/forms-images/invoice_innovative_software.png?sv=2020-02-10&st=2022-03-07T23%3A44%3A42Z&se=2023-03-08T23%3A44%3A00Z&sr=d&sp=rl&sig=1Gb%2FhGta50qPdNi0X1ETsDWBSQ9EAt%2BwDyOt5x9toZY%3D&sdd=1\"],\r\n",
+					"]\r\n",
+					"columns = [\"source\"]\r\n",
+					"forms_df = spark.createDataFrame(data,columns)"
+				],
+				"attachments": null,
+				"execution_count": 5
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"# example: input as pdfs\r\n",
+					"# TODO: code to list all items in DL folder\r\n",
+					"data = [\r\n",
+					"    [\"https://aldelarsynapsedl.blob.core.windows.net/datasets/forms-pdf/invoice_xin_cube.pdf?sv=2020-02-10&st=2022-03-07T23%3A55%3A06Z&se=2023-03-08T23%3A55%3A00Z&sr=d&sp=rl&sig=TN6XI%2BXiiu0A4qbyRB3C0Wx7F0L%2BUVnMDqsRvNiwGRI%3D&sdd=1\"],\r\n",
+					"    [\"https://aldelarsynapsedl.blob.core.windows.net/datasets/forms-pdf/invoice_innovative_software.pdf?sv=2020-02-10&st=2022-03-07T23%3A55%3A06Z&se=2023-03-08T23%3A55%3A00Z&sr=d&sp=rl&sig=TN6XI%2BXiiu0A4qbyRB3C0Wx7F0L%2BUVnMDqsRvNiwGRI%3D&sdd=1\"],\r\n",
+					"]\r\n",
+					"columns = [\"source\"]\r\n",
+					"forms_df = spark.createDataFrame(data,columns)\r\n",
+					"\r\n",
+					"# node, would then need to 'render' the pdfs as images for OpenCV pre-processing"
+				],
+				"attachments": null,
+				"execution_count": 6
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"from synapse.ml.cognitive import *\r\n",
+					"from pyspark.sql.functions import col,explode,flatten\r\n",
+					"\r\n",
+					"cognitiveKey = \"2b3bc3a19ab24bbabdea10fb6a82157c\"\r\n",
+					"\r\n",
+					"analyzeInvoices = (AnalyzeInvoices()\r\n",
+					"                  .setSubscriptionKey(cognitiveKey)\r\n",
+					"                  .setLocation(\"westus2\")\r\n",
+					"                  .setImageUrlCol(\"source\")\r\n",
+					"                  .setOutputCol(\"invoices\")\r\n",
+					"                  .setConcurrency(5))\r\n",
+					"\r\n",
+					"results = (analyzeInvoices\r\n",
+					"        .transform(forms_df)\r\n",
+					"        .withColumn(\"documents\", explode(col(\"invoices.analyzeResult.documentResults.fields\")))\r\n",
+					"        .select(\"source\", \"documents\")\r\n",
+					"        )\r\n",
+					"results.show()"
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"analyzeLayout = (AnalyzeLayout()\r\n",
+					"            .setSubscriptionKey(cognitiveKey)\r\n",
+					"            .setLocation(\"westus2\")\r\n",
+					"            .setImageUrlCol(\"source\")\r\n",
+					"            .setOutputCol(\"layout\")\r\n",
+					"            .setConcurrency(5))\r\n",
+					"\r\n",
+					"(analyzeLayout.transform(forms_df)\r\n",
+					"        .withColumn(\"lines\", flatten(col(\"layout.analyzeResult.readResults.lines\")))\r\n",
+					"        .withColumn(\"readLayout\", col(\"lines.text\"))\r\n",
+					"        .withColumn(\"tables\", flatten(col(\"layout.analyzeResult.pageResults.tables\")))\r\n",
+					"        .withColumn(\"cells\", flatten(col(\"tables.cells\")))\r\n",
+					"        .withColumn(\"pageLayout\", col(\"cells.text\"))\r\n",
+					"        .select(\"source\", \"readLayout\", \"pageLayout\")).show()"
+				],
+				"attachments": null,
+				"execution_count": 8
+			}
+		]
+	}
+}

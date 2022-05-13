@@ -1,0 +1,533 @@
+{
+	"name": "FR Tutorial",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "Alorica",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "58a04a8d-05e8-497e-9d2c-d336ab0c0365"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1",
+				"state": {
+					"cc29475e-b4b1-4111-bec9-4ca612530000": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "https://aloricablobstorage1.blob.core.windows.net/invoices/invoice.jpeg"
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "source",
+										"type": "string"
+									},
+									{
+										"key": "1",
+										"name": "readLayout",
+										"type": "ArrayType(StringType,true)"
+									},
+									{
+										"key": "2",
+										"name": "pageLayout",
+										"type": "ArrayType(StringType,true)"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"0"
+									],
+									"seriesFieldKeys": [
+										"0"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					},
+					"d9f879c2-aa38-402e-b438-9bf1cef5cd10": {
+						"type": "Synapse.DataFrame",
+						"sync_state": {
+							"table": {
+								"rows": [
+									{
+										"0": "https://aloricablobstorage.blob.core.windows.net/invoices/layout.jpg?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-01T01:59:21Z&st=2022-04-08T17:59:21Z&spr=https&sig=YnQXcsshBA38nyaSLMxSstJ7SBDL%2BMkX%2FwZB%2BjlKV6U%3D"
+									},
+									{
+										"0": "https://aldelarsynapsedl.blob.core.windows.net/datasets/forms-images/layout.jpg?sv=2020-02-10&st=2022-03-07T23%3A44%3A42Z&se=2023-03-08T23%3A44%3A00Z&sr=d&sp=rl&sig=1Gb%2FhGta50qPdNi0X1ETsDWBSQ9EAt%2BwDyOt5x9toZY%3D&sdd=1",
+										"1": [
+											"Purchase Order",
+											"Hero Limited",
+											"Purchase Order",
+											"Company Phone: 555-348-6512",
+											"Website: www.herolimited.com",
+											"Email:",
+											"Dated As: 12/20/2020",
+											"accounts@herolimited.com",
+											"Purchase Order #: 948284",
+											"Shipped To",
+											"Vendor Name: Balozi Khamisi",
+											"Company Name: Higgly Wiggly Books",
+											"Address: 938 NE Burner Road",
+											"Boulder City, CO 92848",
+											"Phone: 938-294-2949",
+											"Shipped From",
+											"Name: Kidane Tsehaye",
+											"Company Name: Jupiter Book Supply",
+											"Address: 383 N Kinnick Road",
+											"Seattle, WA 38383",
+											"Phone: 932-299-0292",
+											"Details",
+											"Quantity",
+											"Unit Price",
+											"Total",
+											"Bindings",
+											"20",
+											"1.00",
+											"20.00",
+											"Covers Small",
+											"20",
+											"1.00",
+											"20.00",
+											"Feather Bookmark",
+											"20",
+											"5.00",
+											"100.00",
+											"Copper Swirl Marker",
+											"20",
+											"5.00",
+											"100.00",
+											"SUBTOTAL",
+											"$140.00",
+											"TAX",
+											"$4.00",
+											"Kidane Tsehaye",
+											"TOTAL",
+											"$144.00",
+											"Kidane Tsehaye",
+											"Manager",
+											"Additional Notes:",
+											"Do not Jostle Box. Unpack carefully. Enjoy.",
+											"Jupiter Book Supply will refund you 50% per book if returned within 60 days of reading and",
+											"offer you 25% off you next total purchase."
+										],
+										"2": [
+											"Details",
+											"Quantity",
+											"Unit Price",
+											"Total",
+											"Bindings",
+											"20",
+											"1.00",
+											"20.00",
+											"Covers Small",
+											"20",
+											"1.00",
+											"20.00",
+											"Feather Bookmark",
+											"20",
+											"5.00",
+											"100.00",
+											"Copper Swirl Marker",
+											"20",
+											"5.00",
+											"100.00",
+											"SUBTOTAL",
+											"$140.00",
+											"TAX",
+											"$4.00",
+											"",
+											"",
+											"TOTAL",
+											"$144.00"
+										]
+									},
+									{
+										"0": "https://vksynapsestorage.blob.core.windows.net/datasets/forms-images/Invoice.jpg",
+										"1": [
+											"Purchase Order",
+											"Hero Limited",
+											"Purchase Order",
+											"Company Phone: 555-348-6512",
+											"Website: www.herolimited.com",
+											"Email:",
+											"Dated As: 12/20/2020",
+											"accounts@herolimited.com",
+											"Purchase Order #: 948284",
+											"Shipped To",
+											"Vendor Name: Balozi Khamisi",
+											"Company Name: Higgly Wiggly Books",
+											"Address: 938 NE Burner Road",
+											"Boulder City, CO 92848",
+											"Phone: 938-294-2949",
+											"Shipped From",
+											"Name: Kidane Tsehaye",
+											"Company Name: Jupiter Book Supply",
+											"Address: 383 N Kinnick Road",
+											"Seattle, WA 38383",
+											"Phone: 932-299-0292",
+											"Details",
+											"Quantity",
+											"Unit Price",
+											"Total",
+											"Bindings",
+											"20",
+											"1.00",
+											"20.00",
+											"Covers Small",
+											"20",
+											"1.00",
+											"20.00",
+											"Feather Bookmark",
+											"20",
+											"5.00",
+											"100.00",
+											"Copper Swirl Marker",
+											"20",
+											"5.00",
+											"100.00",
+											"SUBTOTAL",
+											"$140.00",
+											"TAX",
+											"$4.00",
+											"Kidane Tsehaye",
+											"TOTAL",
+											"$144.00",
+											"Kidane Tsehaye",
+											"Manager",
+											"Additional Notes:",
+											"Do not Jostle Box. Unpack carefully. Enjoy.",
+											"Jupiter Book Supply will refund you 50% per book if returned within 60 days of reading and",
+											"offer you 25% off you next total purchase."
+										],
+										"2": [
+											"Details",
+											"Quantity",
+											"Unit Price",
+											"Total",
+											"Bindings",
+											"20",
+											"1.00",
+											"20.00",
+											"Covers Small",
+											"20",
+											"1.00",
+											"20.00",
+											"Feather Bookmark",
+											"20",
+											"5.00",
+											"100.00",
+											"Copper Swirl Marker",
+											"20",
+											"5.00",
+											"100.00",
+											"SUBTOTAL",
+											"$140.00",
+											"TAX",
+											"$4.00",
+											"TOTAL",
+											"$144.00"
+										]
+									}
+								],
+								"schema": [
+									{
+										"key": "0",
+										"name": "source",
+										"type": "string"
+									},
+									{
+										"key": "1",
+										"name": "readLayout",
+										"type": "ArrayType(StringType,true)"
+									},
+									{
+										"key": "2",
+										"name": "pageLayout",
+										"type": "ArrayType(StringType,true)"
+									}
+								],
+								"truncated": false
+							},
+							"isSummary": false,
+							"language": "scala"
+						},
+						"persist_state": {
+							"view": {
+								"type": "details",
+								"chartOptions": {
+									"chartType": "bar",
+									"aggregationType": "count",
+									"categoryFieldKeys": [
+										"0"
+									],
+									"seriesFieldKeys": [
+										"0"
+									],
+									"isStacked": false
+								}
+							}
+						}
+					}
+				}
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/7498e10a-1544-41e2-a9d0-35fd5695f525/resourceGroups/vksynapaerg/providers/Microsoft.Synapse/workspaces/vksynapse/bigDataPools/Alorica",
+				"name": "Alorica",
+				"type": "Spark",
+				"endpoint": "https://vksynapse.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/Alorica",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.1",
+				"nodeCount": 10,
+				"cores": 8,
+				"memory": 56,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"%%configure -f\n",
+					"{\n",
+					"  \"name\": \"synapseml\",\n",
+					"  \"conf\": {\n",
+					"      \"spark.jars.packages\": \"com.microsoft.azure:synapseml_2.12:0.9.5-13-d1b51517-SNAPSHOT\",\n",
+					"      \"spark.jars.repositories\": \"https://mmlspark.azureedge.net/maven\",\n",
+					"      \"spark.jars.excludes\": \"org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.12,org.scalactic:scalactic_2.12,org.scalatest:scalatest_2.12\",\n",
+					"      \"spark.yarn.user.classpath.first\": \"true\"\n",
+					"  }\n",
+					"}"
+				],
+				"attachments": null,
+				"execution_count": 1
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"import synapse.ml\n",
+					"from synapse.ml.cognitive import *"
+				],
+				"attachments": null,
+				"execution_count": 2
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"cognitive_service_name = \"CognitiveServiceFR\""
+				],
+				"attachments": null,
+				"execution_count": 3
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import col, flatten, regexp_replace, explode, create_map, lit\n",
+					"\n",
+					"data = [[\"https://aloricablobstorage.blob.core.windows.net/invoices/layout.jpg?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2022-05-01T01:59:21Z&st=2022-04-08T17:59:21Z&spr=https&sig=YnQXcsshBA38nyaSLMxSstJ7SBDL%2BMkX%2FwZB%2BjlKV6U%3D\"],\n",
+					"[\"https://aldelarsynapsedl.blob.core.windows.net/datasets/forms-images/layout.jpg?sv=2020-02-10&st=2022-03-07T23%3A44%3A42Z&se=2023-03-08T23%3A44%3A00Z&sr=d&sp=rl&sig=1Gb%2FhGta50qPdNi0X1ETsDWBSQ9EAt%2BwDyOt5x9toZY%3D&sdd=1\"],\n",
+					"[\"https://vksynapsestorage.blob.core.windows.net/datasets/forms-images/Invoice.jpg\"]\n",
+					"]\n",
+					"columns = [\"source\"]\n",
+					"imageDf = spark.createDataFrame(data,columns)\n",
+					"\n",
+					"analyzeLayout = (AnalyzeLayout()\n",
+					"                 .setLinkedService(cognitive_service_name)\n",
+					"                 .setImageUrlCol(\"source\")\n",
+					"                 .setOutputCol(\"layout\")\n",
+					"                 .setConcurrency(5))\n",
+					"\n",
+					"\n",
+					"display(analyzeLayout\n",
+					"        .transform(imageDf)\n",
+					"        .withColumn(\"lines\", flatten(col(\"layout.analyzeResult.readResults.lines\")))\n",
+					"        .withColumn(\"readLayout\", col(\"lines.text\"))\n",
+					"        .withColumn(\"tables\", flatten(col(\"layout.analyzeResult.pageResults.tables\")))\n",
+					"        .withColumn(\"cells\", flatten(col(\"tables.cells\")))\n",
+					"        .withColumn(\"pageLayout\", col(\"cells.text\"))\n",
+					"        .select(\"source\", \"readLayout\", \"pageLayout\"))\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"from pyspark.sql.functions import col, flatten, regexp_replace, explode, create_map, lit\n",
+					"\n",
+					"imageDf = spark.createDataFrame([\n",
+					"  (\"https://aloricablobstorage.blob.core.windows.net/invoices/invoice.jpeg\",)\n",
+					"], [\"source\",])\n",
+					"\n",
+					"analyzeLayout = (AnalyzeLayout()\n",
+					"                 .setLinkedService(cognitive_service_name)\n",
+					"                 .setImageUrlCol(\"source\")\n",
+					"                 .setOutputCol(\"layout\")\n",
+					"                 .setConcurrency(5))\n",
+					"\n",
+					"\n",
+					"display(analyzeLayout\n",
+					"        .transform(imageDf)\n",
+					"        .withColumn(\"lines\", flatten(col(\"layout.analyzeResult.readResults.lines\")))\n",
+					"        .withColumn(\"readLayout\", col(\"lines.text\"))\n",
+					"        .withColumn(\"tables\", flatten(col(\"layout.analyzeResult.pageResults.tables\")))\n",
+					"        .withColumn(\"cells\", flatten(col(\"tables.cells\")))\n",
+					"        .withColumn(\"pageLayout\", col(\"cells.text\"))\n",
+					"        .select(\"source\", \"readLayout\", \"pageLayout\"))"
+				],
+				"attachments": null,
+				"execution_count": 12
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"data = [[\"https://aloricablobstorage.blob.core.windows.net/invoices/layout.jpg\"],\n",
+					"[\"https://aldelarsynapsedl.blob.core.windows.net/datasets/forms-images/layout.jpg?sv=2020-02-10&st=2022-03-07T23%3A44%3A42Z&se=2023-03-08T23%3A44%3A00Z&sr=d&sp=rl&sig=1Gb%2FhGta50qPdNi0X1ETsDWBSQ9EAt%2BwDyOt5x9toZY%3D&sdd=1\"]\n",
+					"]\n",
+					"columns = [\"source\"]\n",
+					"forms_df = spark.createDataFrame(data,columns)\n",
+					"forms_df.printSchema"
+				],
+				"attachments": null,
+				"execution_count": 44
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"from synapse.ml.cognitive import *\n",
+					"from pyspark.sql.functions import col,explode,flatten\n",
+					"\n",
+					"cognitiveKey = \"6e5b1bd193d54ab9851b2c9f1460ed29\"\n",
+					"\n",
+					"\n",
+					"analyzeLayout = (AnalyzeLayout()\n",
+					"            .setSubscriptionKey(cognitiveKey)\n",
+					"            .setLocation(\"westus2\")\n",
+					"            .setImageUrlCol(\"source\")\n",
+					"            .setOutputCol(\"layout\")\n",
+					"            .setConcurrency(5))\n",
+					"\n",
+					"(analyzeLayout.transform(forms_df)\n",
+					"        .withColumn(\"lines\", flatten(col(\"layout.analyzeResult.readResults.lines\")))\n",
+					"        .withColumn(\"readLayout\", col(\"lines.text\"))\n",
+					"        .withColumn(\"tables\", flatten(col(\"layout.analyzeResult.pageResults.tables\")))\n",
+					"        .withColumn(\"cells\", flatten(col(\"tables.cells\")))\n",
+					"        .withColumn(\"pageLayout\", col(\"cells.text\"))\n",
+					"        .select(\"source\", \"readLayout\", \"pageLayout\")).show()\n",
+					""
+				],
+				"attachments": null,
+				"execution_count": 45
+			}
+		]
+	}
+}
